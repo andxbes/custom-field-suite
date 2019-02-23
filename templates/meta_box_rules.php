@@ -93,7 +93,16 @@ foreach ( $results as $result ) {
 
 // Page templates
 $page_templates = array();
-$templates = get_page_templates();
+
+// get all templates (and post since WP 4.7)
+$templates = array();
+foreach (get_post_types( array( 'public' => true ) ) as $post_type) {
+    $templates_by_type = get_page_templates(null,$post_type);
+    if(!empty($templates_by_type) && is_array($templates_by_type)){
+        $templates = array_merge($templates,$templates_by_type);
+    }
+}
+$templates = array_unique($templates);
 
 foreach ( $templates as $template_name => $filename ) {
     $page_templates[ $filename ] = $template_name;
