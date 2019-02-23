@@ -3,7 +3,7 @@
 Plugin Name: Custom Field Suite (fork)
 Plugin URI: http://customfieldsuite.com/
 Description: Visually add custom fields to your WordPress edit pages.
-Version: 2.5.12.1 (fork)
+Version: 2.5.12.2 (fork)
 Author: Matt Gibbs
 Text Domain: cfs
 Domain Path: /languages/

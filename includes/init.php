@@ -73,13 +73,13 @@ class cfs_init
 
     function load_textdomain() {
         $locale = apply_filters( 'plugin_locale', get_locale(), 'cfs' );
-        $mofile = WP_LANG_DIR . '/custom-field-suite/cfs-' . $locale . '.mo';
+        $mofile = WP_LANG_DIR . basename(CFS_DIR) .'/cfs-' . $locale . '.mo';
 
         if ( file_exists( $mofile ) ) {
             load_textdomain( 'cfs', $mofile );
         }
         else {
-            load_plugin_textdomain( 'cfs', false, 'custom-field-suite/languages' );
+            load_plugin_textdomain( 'cfs', false, basename(CFS_DIR).'/languages' );
         }
     }
 
